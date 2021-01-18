@@ -22,6 +22,7 @@ html {
   --bg-color-transparent: rgba(65, 65, 65, 0.8);
   --main-color: rgb(167, 86, 86);
   --gray-text: rgb(110, 110, 110);
+  scroll-behavior: smooth;
 }
 
 li,
@@ -305,6 +306,7 @@ footer {
   .burger {
     position: relative;
     display: block;
+    cursor: pointer;
   }
   .burger span {
     padding: 0.2rem 2rem;
@@ -313,34 +315,51 @@ footer {
     margin: 0.5rem 0rem;
     transition: all 0.5s ease-in-out;
   }
-  .menu-check {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translate(5%, -50%);
-    width: 5rem;
-    height: 5rem;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 100;
+  // .menu-check {
+  //   display: block;
+  //   position: absolute;
+  //   top: 50%;
+  //   right: 5%;
+  //   transform: translate(5%, -50%);
+  //   width: 5rem;
+  //   height: 5rem;
+  //   cursor: pointer;
+  //   opacity: 0;
+  //   z-index: 100;
 
-    &:checked + .nav-links {
-      transform: translateX(-100%);
-    }
-    &:checked ~ .burger span {
+  //   &:checked + .nav-links {
+  //     transform: translateX(-100%);
+  //   }
+  //   &:checked ~ .burger span {
+  //     background: white;
+  //   }
+  //   &:checked ~ .burger span:nth-child(1) {
+  //     transform: rotateZ(45deg) translateY(300%);
+  //   }
+  //   &:checked ~ .burger span:nth-child(2) {
+  //     opacity: 0;
+  //   }
+  //   &:checked ~ .burger span:nth-child(3) {
+  //     transform: rotateZ(-45deg) translateY(-300%);
+  //   }
+  // }
+  .nav-open {
+    transform: translateX(-100%);
+  }
+  .toggle {
+    .line1 {
+      transform: rotateZ(45deg) translateY(300%);
       background: white;
     }
-    &:checked ~ .burger span:nth-child(1) {
-      transform: rotateZ(45deg) translateY(300%);
-    }
-    &:checked ~ .burger span:nth-child(2) {
+    .line2 {
       opacity: 0;
     }
-    &:checked ~ .burger span:nth-child(3) {
+    .line3 {
       transform: rotateZ(-45deg) translateY(-300%);
+      background: white;
     }
   }
+
   .nav-links {
     background: var(--bg-color);
     position: fixed;

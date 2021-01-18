@@ -25,6 +25,7 @@ html {
   --bg-color-transparent: rgba(65, 65, 65, 0.8);
   --main-color: rgb(167, 86, 86);
   --gray-text: rgb(110, 110, 110);
+  scroll-behavior: smooth;
 }
 
 li,
@@ -450,6 +451,7 @@ footer h4 {
   .burger {
     position: relative;
     display: block;
+    cursor: pointer;
   }
   .burger span {
     padding: 0.2rem 2rem;
@@ -459,36 +461,22 @@ footer h4 {
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
   }
-  .menu-check {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    -webkit-transform: translate(5%, -50%);
-            transform: translate(5%, -50%);
-    width: 5rem;
-    height: 5rem;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 100;
-  }
-  .menu-check:checked + .nav-links {
+  .nav-open {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-  .menu-check:checked ~ .burger span {
-    background: white;
-  }
-  .menu-check:checked ~ .burger span:nth-child(1) {
+  .toggle .line1 {
     -webkit-transform: rotateZ(45deg) translateY(300%);
             transform: rotateZ(45deg) translateY(300%);
+    background: white;
   }
-  .menu-check:checked ~ .burger span:nth-child(2) {
+  .toggle .line2 {
     opacity: 0;
   }
-  .menu-check:checked ~ .burger span:nth-child(3) {
+  .toggle .line3 {
     -webkit-transform: rotateZ(-45deg) translateY(-300%);
             transform: rotateZ(-45deg) translateY(-300%);
+    background: white;
   }
   .nav-links {
     background: var(--bg-color);
